@@ -4,4 +4,4 @@ Comparable's compareTo returns difference between current value and compared val
 
 Overriden methods for special applications to NoNullArrayList otherwise normal ArrayList method used
 
-Throw exception if element is null.
+Throw exception if element to add is null for the add methods.
