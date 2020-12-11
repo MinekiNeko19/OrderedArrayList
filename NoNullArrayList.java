@@ -17,27 +17,30 @@ public class NoNullArrayList<T> extends ArrayList<T> {
             throw new IllegalArgumentException();
         } else {
             this.add(element);
+            return true;
         }
     }
-    public boolean add(int index, T element) {
+    public void add(int index, T element) {
         if (element == null) {
             throw new IllegalArgumentException();
         } else {
             this.add(index, element);
         }
     }
-    public void set(int index, T value) {
+    public T set(int index, T value) {
         if (value == null) {
             throw new IllegalArgumentException();
         } else {
+            T thing = this.get(index);
             this.set(index, value);
+            return thing;
         }
     }
 
     public static void main(String[] args) {
-        // NoNullArrayList<int> sequence = new NoNullArrayList();
+        // NoNullArrayList<String> sequence = new NoNullArrayList();
         // for (int i = 0; i < 10; i++) {
-        //     sequence.add(i);
+        //     sequence.add("hi");
         // }
         // try {
         //     sequence.add(null);
