@@ -32,10 +32,12 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
     }
 
     public T set(int index, T value) {
-        return value;
+        add(value);
+        return remove(index);
     }
 
     public static void main(String[] args) {
+        // testing add
         OrderedArrayList<Integer> a = new OrderedArrayList<Integer>();
         for (int i = 0; i < 20; i = i + 2) {
             a.add(i);
@@ -45,12 +47,16 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
         System.out.println(a.toString());
         System.out.println(a.add(31));
         System.out.println(a.toString());
-        try {
-            System.out.println(a.add(null));
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-            System.out.println("cannot add null to a NoNullArrayList");
-        }
+        // try {
+        //     System.out.println(a.add(null));
+        // } catch (IllegalArgumentException e) {
+        //     e.printStackTrace();
+        //     System.out.println("cannot add null to a NoNullArrayList");
+        // }
+        // System.out.println(a.toString());
+
+        // testing set
+        System.out.println(a.set(2,13));
         System.out.println(a.toString());
     }
 }
