@@ -13,40 +13,22 @@ public class NoNullArrayList<T> extends ArrayList<T> {
 
     //methods
     public boolean add(T element) {
-        if (element==null) {
-            throw new IllegalArgumentException();
-        } else {
-            this.add(element);
-            return true;
-        }
+        super.add(element);
+        System.out.println(super.get(0));
+        return true;
     }
     public void add(int index, T element) {
-        if (element == null) {
-            throw new IllegalArgumentException();
-        } else {
-            this.add(index, element);
-        }
     }
     public T set(int index, T value) {
-        if (value == null) {
-            throw new IllegalArgumentException();
-        } else {
-            T thing = this.get(index);
-            this.set(index, value);
-            return thing;
-        }
+        return value;
     }
 
     public static void main(String[] args) {
-        // NoNullArrayList<String> sequence = new NoNullArrayList();
-        // for (int i = 0; i < 10; i++) {
-        //     sequence.add("hi");
-        // }
-        // try {
-        //     sequence.add(null);
-        // } catch (IllegalArgumentException e) {
-        //     e.printStackTrace();
-        //     System.out.println("Cannot add null value to NoNullArrayList");
-        // }
+        NoNullArrayList<Integer> a = new NoNullArrayList<Integer>();
+        System.out.println(a.add(2));
+        NoNullArrayList<Integer> b = new NoNullArrayList<Integer>(15);
+        for (int i = 0; i < 20; i++) {
+            System.out.println(b.add(10));
+        }
     }
 }
