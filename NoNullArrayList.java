@@ -22,6 +22,11 @@ public class NoNullArrayList<T> extends ArrayList<T> {
     }
 
     public void add(int index, T element) {
+        if (element == null) {
+            throw new IllegalArgumentException();
+        } else {
+            super.add(index,element);
+        }
     }
 
     public T set(int index, T value) {
@@ -42,6 +47,18 @@ public class NoNullArrayList<T> extends ArrayList<T> {
         System.out.println(c.add(10));
         try {
             c.add(null);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            System.out.println("Cannot have null values in NoNullArrayList");
+        }
+        for (int i = 0; i < 15; i++) {
+            c.add(5);
+        }
+
+        c.add(6, 20);
+        System.out.println(c.toString());
+        try {
+            c.add(3, null);
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
             System.out.println("Cannot have null values in NoNullArrayList");
