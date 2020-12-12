@@ -43,5 +43,7 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
         System.out.println(a.toString());
         System.out.println(a.add(5));
         System.out.println(a.toString());
+        System.out.println(a.add(31));
+        System.out.println(a.toString());
     }
 }
