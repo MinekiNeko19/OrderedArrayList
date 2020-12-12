@@ -45,5 +45,12 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
         System.out.println(a.toString());
         System.out.println(a.add(31));
         System.out.println(a.toString());
+        try {
+            System.out.println(a.add(null));
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            System.out.println("cannot add null to a NoNullArrayList");
+        }
+        System.out.println(a.toString());
     }
 }
