@@ -69,9 +69,20 @@ public class NoNullArrayList<T> extends ArrayList<T> {
         // }
 
         // Testing set(index, value)
-        System.out.println(c.set(10,90));
-        System.out.println(c.toString());
-        System.out.println(c.set(0,80));
-        System.out.println(c.toString());
+        // System.out.println(c.set(10,90));
+        // System.out.println(c.toString());
+        // System.out.println(c.set(0,80));
+        // System.out.println(c.toString());
+
+        // Testing with strings
+        NoNullArrayList<String> d = new NoNullArrayList<String>();
+        for (int i = 0; i < 10; i++) {
+            d.add("lapras");
+        }
+        System.out.println(d.toString());
+        d.add(0, "psyduck");
+        System.out.println(d.toString());
+        System.out.println(d.set(5, "scraggy"));
+        System.out.println(d.toString());
     }
 }
