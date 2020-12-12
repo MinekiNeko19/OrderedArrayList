@@ -58,5 +58,17 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
         // testing set
         System.out.println(a.set(2,13));
         System.out.println(a.toString());
+
+        //testing with strings
+        OrderedArrayList<String> b = new OrderedArrayList<String>();
+        b.add("a"); b.add("b"); b.add("deli"); b.add("even"); b.add("f"); b.add("g");
+        System.out.println(b.toString());
+        b.add("c");
+        System.out.println(b.toString());
+        b.add("zebra");
+        System.out.println(b.toString());
+        b.set(3,"demo");
+        b.set(5, "pumpkin");
+        System.out.println(b.toString());
     }
 }
